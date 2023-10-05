@@ -1,0 +1,136 @@
+<!-- <!DOCTYPE html>
+
+
+
+<html>
+<head>
+    <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible"content="IE=edge">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css"integrity="sha384-KyZXEAg30hqLMpGBr+8fhAXLRK2vvoC2f3809zVXn8CASQIVFZ033BCs2P8p/We"crossorigin="anonymous"> 
+<link rel="stylesheet" href="index.css">
+
+   
+    
+</head>
+<body>
+  
+    <div class="main-container"> 
+         <header class="header-section">
+            <div class="logo-user">
+               <center> <img class="logo" src="./assets/logo.png" alt="logo"></img></center>
+                <a  class="button2" id="table" href="/table">See Table View</a>
+                <a class="button2" href="/register">Add New User</a>
+                <a class="button2" href="/chart">Chart</a>
+            </div>
+        </header>
+        
+ 
+
+
+
+        <section>
+          
+            <h1 class="total">Total Patents:<%= totalCount %></h1>
+          
+           
+          <% items.forEach(items => { %> 
+                 <div class="dish-card">
+                    
+                    <div class="dish-name"><%= items.authorName %></div>
+                    <div class="description"><%= items.Department %></div>
+                    <div class="description"><%= items.publishedDate %></div>
+                    <div class="dish-name"><%= items.patentTitle %>
+                       
+                    </div>
+                    <div class="line"></div>
+                    <div class="rating" ><%= items.patentStatus %></div>
+                    <a class="rating" href="<%= items.data %>" >click here</a>
+                    <div class="reviews"><%= items.iprApplicationNumber %></div>
+
+                   <center><a class="file" href="/view/<%= items._id %>" target="_blank" download>Download PDF</a></center> 
+                   <center><a class="file" href="/view/<%= items._id %>" target="_blank" >View PDF</a></center> 
+            
+                  </br></br></br></br>
+                </div>
+                <% }); %>
+                </section>
+          </div>
+                  
+               
+</html>   -->
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible"content="IE=edge">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css"integrity="sha384-KyZXEAg30hqLMpGBr+8fhAXLRK2vvoC2f3809zVXn8CASQIVFZ033BCs2P8p/We"crossorigin="anonymous"> 
+<link rel="stylesheet" href="index.css">
+
+   
+    
+</head>
+<body>
+  
+    <div class="main-container"> 
+         <header class="header-section">
+            <div class="logo-user">
+               <center> <img class="logo" src="./assets/logo.png" alt="logo"></img></center>
+                <a  class="button2" id="table" href="/table">See Table View</a>
+                <a class="button2" href="/register">Add New User</a>
+                <a class="button2" href="/chart">Chart</a>
+            </div>
+        </header>
+
+
+    <section>
+          
+        <h1 class="total">Total Patents:<%= totalCount %></h1>
+      
+       
+      <% items.forEach(items => { %> 
+       
+             <div class="dish-card">
+                
+                <div class="dish-name"><%= items.authorName %></div>
+                <div class="description"><%= items.Department %></div>
+                <div class="description"><%= items.publishedDate %></div>
+                <div class="dish-name"><%= items.patentTitle %>
+                   
+                </div>
+                <div class="line"></div>
+                <div class="rating" ><%= items.patentStatus %></div>
+   
+                <div class="reviews"><%= items.iprApplicationNumber %></div>
+        
+            <% if (i <= 53) { %>
+                <%  i=i+1 %>
+         
+
+                   <!-- <center><a class="file" href="/view/<%= items.data %>" target="_blank" download>Download PDF</a></center>  -->
+                   <center><a class="file" href="<%= items.data%>" target="_blank" >View PDF</a></center> 
+               
+            
+                
+               
+            <% } else { %>
+             
+          
+                   <center><a class="file" href="/view/<%= items._id %>" target="_blank" download>Download PDF</a></center> 
+                   <center><a class="file" href="/view/<%= items._id %>" target="_blank" >View PDF</a></center> 
+            
+                  
+             
+            <% } %>
+        
+    </br></br></br></br>
+</div>
+<% }); %>
+</section>
+</div>
+  
+
+</body>
+</html>

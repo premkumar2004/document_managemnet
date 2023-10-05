@@ -1,0 +1,60 @@
+
+
+
+<TYPE html>
+    <html lang="en">
+    <head><link href="patent.css" rel="stylesheet"></head>
+    <body>
+    <center>
+    <form class="form"  action="/submit" method="post" enctype="multipart/form-data">
+        <p class="title">Hello Patent Holders!! </p>
+        <p class="message">Enter your patent details here!! </p>
+           
+            <label  for="authorName">
+                <input  id ="authorName" name="authorName" placeholder="" type="text" class="input">
+                <span>Author's name</span>
+            </label>
+        <label>
+            <input name="publishedDate"required="" placeholder="" type="date" class="input">
+            <span class="date">Published Date</span>
+        </label> 
+        <label>
+            <input name="patentTitle" required="" placeholder="" type="text" class="input">
+            <span>Patent Title</span>
+        </label> 
+        <label>
+            <input name="iprApplicationNumber" required="" placeholder="" type="text" class="input">
+            <span>IPR Application Number</span>
+        </label> 
+        <label for="Department">
+      <select id="Department" name='Department'>
+        <option value="User" name='Department' Selected>Department</option>
+          <option value="IT" name='Department'>IT</option>
+          <option value="CSE" name='Department'>CSE</option>
+          <option value="EEE" name='Department'>EEE</option>
+          <option value="ECE" name='Department'>ECE</option>
+          <option value="MECH" name='Department'>MECH</option>
+          <option value="MTS" name='Department'>MTS</option>
+      </select></label>
+        
+      <label for="patentStatus">
+        <select id="patentStatus" name='patentStatus'>
+          <option value="User" name='patentStatus' Selected>patentStatus</option>
+            <option value="Published" name='patentStatus'>Published</option>
+            <option value="Granted" name='patentStatus'>Granted</option>
+            <option value="Pending" name='patentStatus'>Pending</option>
+           
+        </select></label>
+        <label for="patentFile">
+        <span>Upload Patent</span>
+            <input type="file" name="patentFile"  class="input" id="patentFile" accept=".pdf">
+           
+    
+    
+        <p class="message">The Above mentioned Informations are True to my Knowledge</p>
+        <button class="submit">Submit</button>
+        
+    </form>
+      </center>
+        </body>
+        </html>

@@ -1,0 +1,80 @@
+
+
+
+<TYPE html>
+    <html lang="en">
+    <head><link href="patent.css" rel="stylesheet"></head>
+    <body>
+    <center>
+    <form class="form"  action="/reg" method="POST" enctype="multipart/form-data">
+        <p class="title">Hello Users </p>
+        <p class="message">Enter your Details </p>
+           
+            <label  for="UserName">
+                <input  id ="UserName" name="UserName" placeholder="" type="text" class="input">
+                <span>User name</span>
+            </label>
+            <label>
+                <select id="Gender" name='Gender'>
+                    <option value="Gender" name='Gender' Selected>Department</option>
+                      <option value="Male" name='Male'>Department</option>
+                      <option value="Female" name='Female'>Department</option>
+                      <option value="Others" name='Female'>Others</option></select>
+            </label> 
+            <label>
+                <select id="Department" name='Department'>
+                    <option value="Section" name='Department' Selected>Department</option>
+                      <option value="Sec:A" name='Department'>value A</option>
+                      <option value="Sec:b" name='Department'>Department</option></select>
+            </label> 
+            <label>
+                <input name="Professor" required="" placeholder="" type="text" class="input">
+                <span>Professor</span>
+            </label> 
+            <label>
+                <input name="Date of Join" required="" placeholder="" type="text" class="input">
+                <span>Date of Join</span>
+            </label> 
+            <label>
+                <input name="Experience" required="" placeholder="" type="text" class="input">
+                <span>Experience</span>
+            </label> 
+        <label>
+            <input name="Mobile Number"required="" placeholder="" type="date" class="input">
+            <span class="Mobile Number">Mobile Number</span>
+        </label>     
+        <label for="Email">Email:</label>
+      <input type="email" id="Email" name="Email" required>
+    </label>
+        <!-- <label for="Department">
+      <select id="Department" name='Department'>
+        <option value="User" name='Department' Selected>Department</option>
+          <option value="IT" name='Department'>IT</option>
+          <option value="CSE" name='Department'>CSE</option>
+          <option value="EEE" name='Department'>EEE</option>
+          <option value="ECE" name='Department'>ECE</option>
+          <option value="MECH" name='Department'>MECH</option>
+          <option value="MTS" name='Department'>MTS</option>
+      </select></label>
+         -->
+      <!-- <label for="patentStatus">
+        <select id="patentStatus" name='patentStatus'>
+          <option value="User" name='patentStatus' Selected>patentStatus</option>
+            <option value="Published" name='patentStatus'>Published</option>
+            <option value="Granted" name='patentStatus'>Granted</option>
+            <option value="Pending" name='patentStatus'>Pending</option>
+            -->
+        <!-- </select></label>
+        <label for="patentFile">
+        <span>Upload Patent</span>
+            <input type="file" name="patentFile"  class="input" id="patentFile" accept=".pdf">
+           
+    
+    
+        <p class="message">The Above mentioned Informations are True to my Knowledge</p> -->
+        <button class="submit">Submit</button>
+        
+    </form>
+      </center>
+        </body>
+        </html>

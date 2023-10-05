@@ -1,0 +1,333 @@
+
+
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Patent-Database</title>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.13/xlsx.full.min.js"></script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f3f3f3;
+    }
+  .file{
+    color:#009087;
+  }
+ 
+ .button1{
+  width: 240px;
+		background: #fff;
+		color: #a3a3a3;
+		font: inherit;
+		box-shadow: 0 6px 10px 0 rgba(0, 0, 0 , .1);
+		border: 0;
+		outline: 0;
+		padding: 22px 18px;
+ }
+  
+  
+  .button3{
+    font-family: 'Poppins', sans-serif;
+    margin-left:-110px;
+	background: transparent;
+	color: inherit;
+	font: inherit;
+	border: 0;
+	outline: 0;
+	padding: 0;
+	transition: all 200ms ease-in;
+	cursor: pointer;
+  background-color: #009087;
+		color: white;
+		box-shadow: 0 0 10px 2px rgba(0, 0, 0, .1);
+		border-radius: 2px;
+		padding: 12px 36px;
+  }
+
+  
+  .move{
+    font-family: 'Poppins', sans-serif;
+    margin-left: 80px;;
+  }
+  .filters{
+ color:black;
+    text-decoration: none;
+    margin-left: 50px;;
+   position: relative;
+   display: inline-block;
+
+  }
+    table {
+      
+      border-collapse: collapse;
+      width: 90%;
+      margin: 0 auto;
+      background-color: #fff;
+      border: 1px solid #ddd;
+    }
+    h1{
+      font-size: 900;
+      font-family: 'Poppins', sans-serif;
+    }
+    .total {
+      background: radial-gradient(circle at 12.3% 19.3%, rgb(85, 88, 218) 90%, rgb(95, 209, 249) 100.2%);
+      -webkit-text-fill-color: transparent;
+       -webkit-background-clip: text;
+     margin-left: 80px;
+      font-family: 'Poppins', sans-serif;
+    }
+    th, td {
+      font-family: 'Poppins', sans-serif;
+      text-align: center;
+      padding: 10px;
+      text-align: left;
+      font-size: 17px;;
+    }
+    .header-section {
+    top: 0;
+    background-color: #ffffff;
+    position: sticky;
+    /* padding: 50px 0; */
+  z-index: 100;
+}
+    th {
+      background-color: #009087;
+      color: white;
+    }
+
+    tr:nth-child(even) {
+      background-color: #f2f2f2;
+    }
+
+    tr:hover {
+      background-color: #e0e0e0;
+    }
+    .logo-user {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 80%;
+    margin: 0 auto;
+    padding: 10px;
+    color: #fff;
+    position:sticky;
+}
+
+.logo {
+    height: 50px;
+
+}
+.filter{
+  text-align: center;
+  margin:40px;
+ display: flex;
+}
+
+.code{
+  float: right;
+  margin: 20px;
+  font-weight: bold;
+  
+  
+}
+
+
+
+#exportButton {
+    text-decoration: none;
+    float:right;
+    margin: 20px;;
+    transition: all 0.2s ease-in;
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+    color: #090909;
+    padding: 0.7em 1.7em;
+    font-size: 18px;
+    border-radius: 0.5em;
+    background:#ffff;
+    border: 1px solid #e8e8e8;
+    box-shadow: 6px 6px 12px #c5c5c5,
+               -6px -6px 12px #ffffff;
+  }
+  
+  #exportButton:active {
+    color: #666;
+    box-shadow: inset 4px 4px 12px #ffffff,
+               inset -4px -4px 12px #ffffff;
+  }
+  
+  #exportButton:before {
+    content: "";
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%) scaleY(1) scaleX(1.25);
+    top: 100%;
+    width: 140%;
+    height: 180%;
+    background-color: rgba(0, 0, 0, 0.05);
+    border-radius: 50%;
+    display: block;
+    transition: all 0.5s 0.1s cubic-bezier(0.55, 0, 0.1, 1);
+    z-index: -1;
+  }
+  
+  #exportButton:after {
+    content: "";
+    position: absolute;
+    left: 55%;
+    transform: translateX(-50%) scaleY(1) scaleX(1.45);
+    top: 180%;
+    width: 160%;
+    height: 190%;
+    background-color: #009087;
+    border-radius: 50%;
+    display: block;
+    transition: all 0.5s 0.1s cubic-bezier(0.55, 0, 0.1, 1);
+    z-index: -1;
+  }
+  
+  #exportButton:hover {
+    color: #ffffff;
+    border: 1px solid #009087;
+  }
+  
+  #exportButton:hover:before {
+    top: -35%;
+    background-color: #009087;
+    transform: translateX(-50%) scaleY(1.3) scaleX(0.8);
+  }
+  
+  #exportButton:hover:after {
+    top: -45%;
+    background-color: #009087;
+    transform: translateX(-50%) scaleY(1.3) scaleX(0.8);
+  }
+  
+  </style>
+</head>
+<body>
+  <header class="header-section">
+    <p class="code">VITECH RD F04</p>
+    <div class="logo-user">
+      
+       <center> <p class="code">VITECH RD F04</p><img class="logo" src="./assets/logo.png" alt="logo"></img></center>
+       
+    </div>
+   
+    
+</header>
+
+  <center><h1>Patent-Database</h1></center>
+  <div class="filter">
+  <div class="move">
+  <form id="loginForm" action="/table" method="POST">
+  <label  for="Department">
+    <select class="button1" id="Department" name='Department'>
+      <option value="User" name='Department' Selected>Department</option>
+        <option value="IT" name='Department'>IT</option>
+        <option value="CSE" name='Department'>CSE</option>
+        <option value="EEE" name='Department'>EEE</option>
+        <option value="ECE" name='Department'>ECE</option>
+        <option value="MECH" name='Department'>MECH</option>
+        <option value="MTS" name='Department'>MTS</option>
+    </select></label>
+    <button class="button3" type="submit">Submit</button>
+  </form>
+  <a  class="filters" id="table" href="/table">Remove Filters</a>
+</div>
+
+<h1 class="total">Total Patents:<%= totalCount %></h1>
+
+
+</div>
+<button id="exportButton">Export to Excel</button>
+
+  <table id="data-table">
+    <tr>
+      <th>Author Name</th>
+      <th>Published Date</th>
+      <th>Patent Title</th>
+      <th>IPR Application Number</th>
+      <th>Patent Status</th>
+      <th>Department</th>
+      <th>Pdf Download</th>
+    </tr>
+    <% items.forEach(items => { %>
+    <tr>
+
+      <td><%= items.authorName %></td>
+      <td><%= items.publishedDate %></td>
+      <td><%= items.patentTitle %></td>
+      <td><%= items.iprApplicationNumber %></td>
+      <td><%= items.patentStatus %></td>
+      <td><%= items.Department %></td>
+    
+      <% if ( j <= 53) { %>
+        <%  j=j+1 %>
+ 
+        <td><a class="file" href="<%= items.data %>" target="_blank" download >Download PDF</a></td>
+        
+          
+        
+       
+    <% } else { %>
+     
+      <td><a class="file" href="/view/<%= items._id %>" target="_blank" download >Download PDF</a></td>
+          
+     
+    <% } %>
+      
+      
+    </tr>
+    <% }); %>
+   
+  </table>
+  
+
+  <script>
+      document.getElementById('exportButton').addEventListener('click', function () {
+          // Function to export the table to Excel
+          exportTableToExcel('data-table', 'exported-data.xlsx');
+      });
+
+      const workbook = XLSX.readFile('your-file.xlsx', { codepage: 65001, type: 'binary' });
+
+
+      function exportTableToExcel(tableId, filename) {
+          const table = document.getElementById(tableId);
+          const rows = table.querySelectorAll('tr');
+          const data = [];
+          
+          // Iterate through table rows and cells to collect data
+          rows.forEach(function (row) {
+              const rowData = [];
+              row.querySelectorAll('td, th').forEach(function (cell) {
+                  rowData.push(cell.innerText);
+              });
+              data.push(rowData.join('\t'));
+          });
+
+          // Create a data URI for the Excel file
+          const uri = 'data:application/vnd.openxmlformats-officedocument.spreadsheetml.sheet;base64,' + btoa(data.join('\n'));
+
+          // Create a download link and trigger the download
+          const link = document.createElement('a');
+          link.href = uri;
+          link.download = filename;
+          document.body.appendChild(link);
+          link.click();
+          document.body.removeChild(link);
+      }
+  </script>
+
+    
+</body>
+</html>
+
+
+

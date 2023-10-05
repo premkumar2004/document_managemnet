@@ -1,0 +1,234 @@
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: "poppins";
+    background-color: #e8e8e8;
+    color: #4b4b4b;
+}
+
+
+.header-section {
+    top: 0;
+    background-color: #ffffff;
+    position: sticky;
+    /* padding: 10px 0; */
+  z-index: 100;
+}
+.total{
+    background: radial-gradient(circle at 12.3% 19.3%, rgb(85, 88, 218) 90%, rgb(95, 209, 249) 100.2%);
+    -webkit-text-fill-color: transparent;
+     -webkit-background-clip: text;
+   margin-left: 80px;
+    font-family: 'Poppins', sans-serif;
+    font-size: 30px;;
+    width: 100%;
+   
+  }
+
+.logo-user {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 80%;
+    margin: 0 auto;
+    padding: 10px;
+    color: #fff;
+    position:sticky;
+}
+
+.logo {
+    height: 50px;
+
+}
+
+
+#menu-container {
+    width: 80%;
+    margin: 0 auto;
+    padding-top: 50px;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 30px;
+}
+section{
+    width: 70%;
+    margin: 0 auto;
+    padding-top: 50px;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 30px;
+}
+.dish-title{
+  overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    line-height: 21px;
+    max-height: 68px;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+}
+.dish-name,.description,.rating ,.dish-title{
+    text-align: center;
+}
+.line{
+    border: 1px solid black;
+}
+.dish-card {
+    overflow: hidden;
+  
+    max-width: 320px;
+    border-width: 1px;
+    border-color: rgba(219, 234, 254, 1);
+    border-radius: 1rem;
+    background-color: rgba(255, 255, 255, 1);
+    padding: 1rem;
+    height:320px;
+}
+.dish-card:hover{
+    border-color: rgb(215, 215, 215);
+    border-radius: 1rem;
+    background-color: rgb(222, 222, 222);
+}
+
+.dish-image {
+    width: 100%;
+    height: 175px;
+    object-fit: cover;
+}
+
+.dish-name ,.dish-title{
+    margin: 10px 0 5px 0;
+    font-size: 20px;
+    font-weight: bold;
+    color: #000000;
+    
+}
+
+.description {
+    margin: 0px 0;
+    font-size: 14px;
+}
+
+.description,.reviews,.rating {
+    color: #000000;
+}
+
+.rating {
+    display: inline-block;
+    margin-bottom: 12px;;
+    font-size: 12px;
+    border-bottom: 1px solid #eaeaea
+}
+.file{  display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 0.5rem;
+    width: 90%;
+    margin:5px;;
+    padding: 0.75rem 1.25rem;
+    text-decoration: none;
+    
+    font-size: 0.875rem;
+    line-height: 1.25rem;
+    font-weight: 600;
+    
+    background-color: #009087;
+    color: rgba(255, 255, 255, 1);
+}
+.border {
+    background-color: rgb(227, 219, 219);
+    width: 100%;
+    height: 1px;
+}
+
+.reviews {
+    display: flex;
+    float: right;
+    justify-content: center;
+  margin-bottom: 12px;;
+    font-size: 12px
+}
+
+
+
+
+.button2 {
+    text-decoration: none;
+  
+    transition: all 0.2s ease-in;
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+    color: #090909;
+    padding: 0.7em 1.7em;
+    font-size: 18px;
+    border-radius: 0.5em;
+    background:#ffff;
+    border: 1px solid #e8e8e8;
+    box-shadow: 6px 6px 12px #c5c5c5,
+               -6px -6px 12px #ffffff;
+  }
+  
+  .button2:active {
+    color: #666;
+    box-shadow: inset 4px 4px 12px #ffffff,
+               inset -4px -4px 12px #ffffff;
+  }
+  
+  .button2:before {
+    content: "";
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%) scaleY(1) scaleX(1.25);
+    top: 100%;
+    width: 140%;
+    height: 180%;
+    background-color: rgba(0, 0, 0, 0.05);
+    border-radius: 50%;
+    display: block;
+    transition: all 0.5s 0.1s cubic-bezier(0.55, 0, 0.1, 1);
+    z-index: -1;
+  }
+  
+  .button2:after {
+    content: "";
+    position: absolute;
+    left: 55%;
+    transform: translateX(-50%) scaleY(1) scaleX(1.45);
+    top: 180%;
+    width: 160%;
+    height: 190%;
+    background-color: #009087;
+    border-radius: 50%;
+    display: block;
+    transition: all 0.5s 0.1s cubic-bezier(0.55, 0, 0.1, 1);
+    z-index: -1;
+  }
+  
+  .button2:hover {
+    color: #ffffff;
+    border: 1px solid #009087;
+  }
+  
+  .button2:hover:before {
+    top: -35%;
+    background-color: #009087;
+    transform: translateX(-50%) scaleY(1.3) scaleX(0.8);
+  }
+  
+  .button2:hover:after {
+    top: -45%;
+    background-color: #009087;
+    transform: translateX(-50%) scaleY(1.3) scaleX(0.8);
+  }
+  .search{
+     float: right; 
+  }
